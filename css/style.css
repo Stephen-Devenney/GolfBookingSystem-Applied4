@@ -1,0 +1,316 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("images/golf.jpg");
+  background-size:cover;
+  background-position:center;
+}
+#floating_div {
+    background:#ffffff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px grey;
+    padding: 5px;
+    width: 40%;
+    height: 50%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow-y : auto;
+}
+
+#floating_div2 {
+    background:#ffffff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px grey;
+    padding: 5px;
+    width: 95%;
+    height: 95%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow-y : auto;
+}
+
+h2{
+    text-align: center;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/*button {
+    background-color: #4CAF50;
+    border-radius: 5px; 
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+}
+
+button:hover {
+    opacity: 0.8;
+}*/
+
+.bookNow{
+    background-color: #4CAF50;
+    border-radius: 5px; 
+    color: white;
+    margin:auto;
+    display:block;
+    border: none;
+    cursor: pointer;
+    width: 80%;   
+}
+
+
+
+.confirmButton{
+    background-color: #4CAF50;
+    border-radius: 5px; 
+    color: white;
+    margin:auto;
+    display:block;
+    border: none;
+    cursor: pointer;
+    width: 50%; 
+    padding: 14px 20px;
+}
+
+.backButton{
+    background-color: #f44336;
+    border-radius: 5px; 
+    color: white;
+    margin:auto;
+    display:block;
+    border: none;
+    cursor: pointer;
+    width: 50%; 
+    padding: 14px 20px;
+}
+
+.cancelbtn .back .backCancel  {
+    background-color: #f44336;
+    border-radius: 5px;   
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    color: white;
+}
+
+.backCancel{
+    float: right;
+}
+
+
+.bookTeeTime, .cancelBooking ,.membersBooking, .visitorsBooking, .login_button  {
+    background-color: #4CAF50;
+    border-radius: 5px; 
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+
+.cancelbtn, .back  {
+    background-color: #f44336;
+    border-radius: 5px;   
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+span.forgotPassword {
+    text-decoration: none;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    font-size: 10px;
+}
+
+    a:link, a:visited, a:hover, a:active   {
+  /* Applies to all unvisited links */
+  text-decoration:  none;
+  font-weight:      bold;
+  color: white;
+}
+
+.bookingTimes {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+}
+
+ .bookingTimes td,  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align:center; 
+    vertical-align:middle;
+}
+
+ .bookingTimes tr:nth-child(even){background-color: #f2f2f2;}
+
+ .bookingTimes tr:hover {background-color: #ddd;}
+ .bookingTimes th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    text-align: center;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+.popupContainer{
+    position:absolute;
+    width:50%;
+    height: auto;
+    left:45%;
+    top:80px;
+    background: #FFF;
+}
+
+
+
+#modal_trigger {margin:100px auto; width:100px; display:block;}
+
+
+/* User Register Form */
+.user_register {display: none;}
+.user_register label {display: block; margin-bottom:5px;}
+.user_register input[type="text"], .user_register input[type="email"], .user_register input[type="password"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
+.user_register input[type="checkbox"] {float:left; margin-right:5px;}
+.user_register input[type="checkbox"]+label {float:left;}
+
+.user_register .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
+
+.bookingConfirmation{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+}
+
+ .bookingConfirmation td,  th {
+    text-align:center; 
+    vertical-align:middle;
+}
+
+.cal{
+    margin: 0 auto;
+    width: 85%;
+}
+
+#frame {
+    display: inline-block;
+    overflow: hidden;
+    width: 95%;
+}
+
+ul#days {
+    background: white;
+    white-space: nowrap;
+    position: relative;
+}
+
+li.day {
+    display: inline-block;
+    background: gray;
+}
+
+
+#next , #prev {
+color: black;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.date {
+    float: left;
+}
+
+.time{
+    float:right;
+}
+
+.popup-overlay{
+  /*Hides pop-up when there is no "active" class*/
+  visibility:hidden;
+  position:absolute;
+  background:#ffffff;
+  border:3px solid #666666;
+  width:50%;
+  left:25%;
+  overflow: auto; 
+
+}
+.popup-overlay.active{
+  /*displays pop-up when "active" class is present*/
+  visibility:visible;
+  text-align:center;
+  max-height: calc(100% - 100px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup-content {
+  /*Hides pop-up content when there is no "active" class */
+ visibility:hidden;
+}
+
+.popup-content.active {
+  /*Shows pop-up content when "active" class is present */
+  visibility:visible;
+}
