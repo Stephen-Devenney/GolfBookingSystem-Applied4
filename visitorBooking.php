@@ -34,10 +34,10 @@
           <tr><td>Time:</td><td><input type="text" id="timeSelected" class="form-control" placeholder="" readonly></td></tr>
           <tr><td>Booking Name:</td><td><input type="text" id="bookingName" class="form-control" placeholder="" required></td>
           <tr><td>Email:</td><td><input type="text" id="email" class="form-control" placeholder="" required></td>
-          <tr><td>Player 1</td><td><input type="text" id="player1" class="form-control" placeholder="" ></td>
-          <tr><td>Player 2</td><td><input type="text" id="player2" class="form-control" placeholder="" ></td>
-          <tr><td>Player 3</td><td><input type="text" id="player3" class="form-control" placeholder="" ></td>
-          <tr><td>Player 4</td><td><input type="text" id="player4" class="form-control" placeholder="" ></td>
+          <tr><td><label for="player1">Player 1</label></td><td><input type="text" id="player1" class="form-control" placeholder="" ></td>
+          <tr><td><label for="player2">Player 2</label></td><td><input type="text" id="player2" class="form-control" placeholder="" ></td>
+          <tr><td><label for="player3">Player 3</label</td><td><input type="text" id="player3" class="form-control" placeholder="" ></td>
+          <tr><td><label for="player4">Player 4</label></td><td><input type="text" id="player4" class="form-control" placeholder="" ></td>
     </table>
      <!--popup's close button-->
       <button id="confirmBooking">Confirm Booking</button>
