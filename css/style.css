@@ -36,6 +36,22 @@ body {
     overflow-y : auto;
 }
 
+#floating_div3 {
+    background:#ffffff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px grey;
+    padding: 5px;
+    width: 55%;
+    height: 50%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow-y : auto;
+}
+
 h2{
     text-align: center;
 }
