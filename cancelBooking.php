@@ -4,7 +4,7 @@
 <title>Applied Team 4 | Golf Booking System</title>
   <!-- scripts -->
 <script src="jquery-3.3.1.min.js"></script>
-<script src="script.js"></script>
+<script src="cancelBooking.js"></script>
   <link rel="stylesheet" href="css/cancelStyle.css">
 </head>
 <body>

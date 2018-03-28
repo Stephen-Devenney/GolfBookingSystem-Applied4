@@ -48,7 +48,7 @@ $('document').ready(function(){
  		return;
  	}
  	$.ajax({
-      url: 'test.php',
+      url: 'cancelBooking.php',
       type: 'post',
       data: {
       	'date_check' : 1,
@@ -90,7 +90,7 @@ $('#bookingTime').on('blur', function(){
     return;
   }
   $.ajax({
-    url: 'test.php',
+    url: 'cancelBooking.php',
     type: 'post',
     data: {
       'bookingTime_check' : 1,
@@ -134,7 +134,7 @@ $('#bookingName').on('blur', function(){
     return;
   }
   $.ajax({
-    url: 'test.php',
+    url: 'cancelBooking.php',
     type: 'post',
     data: {
       'bookingName_check' : 1,
@@ -181,7 +181,7 @@ $('#bookingName').on('blur', function(){
 	}else{
       // proceed with form submission
       $.ajax({
-      	url: 'test.php',
+      	url: 'cancelBooking.php',
       	type: 'post',
       	data: {
       		'cancel' : 1,
