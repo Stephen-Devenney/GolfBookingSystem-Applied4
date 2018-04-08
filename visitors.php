@@ -10,7 +10,7 @@
     <h2> Visitor Bookings </h2>
     <center><button class="bookTeeTime"><a href="visitorBooking.php">Book A Tee Time</button></center>
     <center><button class="cancelBooking"><a href="cancelBooking.php">Cancel Booking</button><center>
-    <button class="back"><a href ="teetimes.html">Back</a></button>
+    <button class="back"><a href ="teetimes.html">Return</a></button>
   </div>
 </div>
 </body>

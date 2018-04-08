@@ -33,9 +33,10 @@ if ($count == 1)
 <div id="demo">	
 
 
-<button style="float: right;"><a href="logout.php"> Logout </a></button>
+<button class= "infoBtns" style="float: right;"><a href="logout.php"> Logout </a></button>
 
-<button style="float: right;"><a href ="memberAccount.html">My Account</a></button>
+<button class= "infoBtns" style="float: right;"><a href ="memberAccount.html">My Account</a></button>
+<button class= "infoBtns" style="float: right;"><a href ="membersLogin.php">Return</a></button>
 <h4>Your Active Bookings</h4>
 
 <?php
@@ -65,7 +66,7 @@ echo "</table>";
 ?>
 
 
-<p>Click here to book a tee time     <button><a href ="memberBooking.php">Book a time<a></button></p>
+<p>Click here to book a tee time     <button class = "infoBtns"><a href ="memberBooking.php">Book a time<a></button></p>
 
 
 </div>

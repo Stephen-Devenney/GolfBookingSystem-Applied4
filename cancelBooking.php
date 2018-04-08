@@ -30,7 +30,7 @@
 	  </div>
 	  <div>
 	 	<button type="button" name="cancel" id="cancel_btn">Cancel</button>
-	 	<button type="button" name="back" id="back_btn">Back</button>
+	 	<button type="button" name="back" id="back_btn"><a href ="visitors.php">Return</a></button>
 	  </div>
 	</form>
 </body>

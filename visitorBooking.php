@@ -20,6 +20,7 @@
 <body>
 		<div id="floating_div2">
 			<h2> Book A Tee Time </h2>
+      <button class= "infoBtns" style="float: right;"><a href ="visitors.php">Return</a></button>
 			<h4 id="txt"></h4>
 		<h4 id="date"></h4><input type="button" id="datepicker" value="cal"><span class="glyphicon glyphicon-calendar"></span> Calendar</input>
     <hr>

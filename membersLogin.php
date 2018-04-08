@@ -15,8 +15,8 @@
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Please enter your password" required>
         <button type="submit" class="loginbtn">Login</button>
          
-          <button type="button" class="cancelbtn"><a href="teetimes.html">Cancel</button>
-          <span class="forgotPassword"><a href="#">Forgot password</a></span>
+          <button type="button" class="cancelbtn"><a href="teetimes.html">Return</button>
+          
         
       </form>
 </div>

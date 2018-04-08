@@ -106,7 +106,7 @@ button:hover {
 }
 
 .backButton{
-    background-color: #f44336;
+    background-color: #d3d3d3;
     border-radius: 5px; 
     color: white;
     margin:auto;
@@ -118,7 +118,7 @@ button:hover {
 }
 
 .cancelbtn .back .backCancel  {
-    background-color: #f44336;
+    background-color: #d3d3d3;
     border-radius: 5px;   
     padding: 14px 20px;
     margin: 8px 0;
@@ -134,7 +134,7 @@ button:hover {
 
 
 .bookTeeTime, .cancelBooking ,.membersBooking, .visitorsBooking, .login_button  {
-    background-color: #4CAF50;
+    background-color: #90ee90;
     border-radius: 5px; 
     color: white;
     padding: 14px 20px;
@@ -144,15 +144,48 @@ button:hover {
     width: 30%;
 }
 
-.cancelbtn, .back  {
-    background-color: #f44336;
-    border-radius: 5px;   
-    padding: 14px 20px;
+.cancelbtn, .back {
+    background-color: #837272;
+    color:white;
+    padding: 0px 0px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 30%;
+    width: 40%;
 }
+
+.loginbtn  {
+    background-color: #837272;
+    color:white;
+    padding: 8px 8px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+}
+.infoBtns {
+    background-color: #837272;
+    color:white;
+    padding: 0px 0px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    
+}
+.bookTeeTime, .cancelBooking{
+    background-color: #90ee90;
+    border-radius: 5px; 
+    color: white;
+    padding: 14px 20px;
+    margin: 0px 0;
+    border: none;
+    cursor: pointer;
+    width:40%;
+    
+    
+
+}
+
 span.forgotPassword {
     text-decoration: none;
     margin: 8px 0;
