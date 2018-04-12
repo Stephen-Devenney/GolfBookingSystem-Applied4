@@ -13,11 +13,12 @@ if ($count == 1)
   $firstname = $row['firstName'];
   $firstname .= " ";
   $fullname = $firstname .$row['lastName'];
-
+  $email =$row['email'];
   //echo 'Welcome ';
   //echo $firstname ;
   //echo ' ';
   //echo  $fullname;
+  $_SESSION['email']=$email;
  $_SESSION['name'] = $fullname;
 }
 

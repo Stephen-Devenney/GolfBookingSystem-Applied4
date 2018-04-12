@@ -45,7 +45,7 @@ header("Location: membersInformation.php");
 else
 {
 //3.1.3 If the login credentials doesn't match, he will be shown with an error message.
-echo '<script type="text/javascript"> alert("Invalid Login Credentials.") </script>';
+echo '<script type="text/javascript"> alert("Incorrect Member Number or Password.") </script>';
 }
 }
 ?>
