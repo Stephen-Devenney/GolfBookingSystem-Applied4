@@ -27,9 +27,30 @@ if ($count == 1)
 <head>
   <title>TeeTimes | Members Information</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="membersInformation.js"></script>
 </head>
 <div id="floating_div3">
+  
 <body>
+  <div class="popup-overlay">
+  <!--Creates the popup content-->
+   <div class="popup-content">
+  <h2>Edit Details</h2>
+      <table id="bookingForm">
+        <tr><th>Edit Player Details</th></tr>
+         
+          <tr><td><label for="player1">Player 1</label></td><td><input type="text" id="player1" class="form-control" placeholder="" ></td></tr>
+          <tr><td><label for="player2">Player 2</label></td><td><input type="text" id="player2" class="form-control" placeholder="" ></td></tr>
+          <tr><td><label for="player3">Player 3</label></td><td><input type="text" id="player3" class="form-control" placeholder="" ></td></tr>
+          <tr><td><label for="player4">Player 4</label></td><td><input type="text" id="player4" class="form-control" placeholder="" ></td></tr>
+    </table>
+     <!--popup's close button-->
+      <button class="editBooking">Edit Booking</button>
+      <button class= "deleteBooking">Delete Booking</button>
+      <button class="close">Close</button>    
+    </div>
+    </div>
 	<h1 id="heading"> Welcome <?php  echo $_SESSION['name'] ?> </h1>
 <div id="demo">	
 
@@ -53,9 +74,10 @@ echo "<table border = '1'>";
 if ($count > 0)
   {
  
-  echo "<tr><td nowrap>" . "Date" . "</td><td nowrap>" . "Time" . "</td><td nowrap>" . "Player 1" . "</td><td nowrap>" . "Player 2" . "</td><td nowrap>" . "Player 3" . "</td><td nowrap>" . "Player 4" . "</td></tr>";
+  echo "<tr><td nowrap>" . "Date" . "</td><td nowrap>" . "Time" . "</td><td nowrap>" . "Player 1" . "</td><td nowrap>" . "Player 2" . "</td><td nowrap>" . "Player 3" . "</td><td nowrap>" . "Player 4" . "</td><td></td></tr>";
   while($row = mysqli_fetch_array($result)){   
-    echo "<tr><td>" . $row['bookingDate'] . "</td><td>" . $row['bookingTime'] . "</td><td>" . $row['player1'] . "</td><td>" . $row['player2'] . "</td><td>" . $row['player3'] . "</td><td>" . $row['player4'] . "</td></tr>";  
+    echo "<tr><td>" . $row['bookingDate'] . "</td><td>" . $row['bookingTime'] . "</td><td>" . $row['player1'] . "</td><td>" . $row['player2'] . "</td><td>" . $row['player3'] . "</td><td>" . $row['player4'] . "</td><td>"."<button name='".$row['bookingDate']."' type='submit' class='edit' id='".$row['bookingTime']."'>Edit</button></td></tr>";  
+
   }
 }
 else
@@ -72,5 +94,7 @@ echo "</table>";
 
 </div>
 </div>
+
+
 </body>
 </html>
