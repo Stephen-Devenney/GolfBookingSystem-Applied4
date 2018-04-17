@@ -55,31 +55,26 @@ window.onload=function() {
           {
             if(data[i].bookingDate == dateSelected && data[i].bookingTime == timeSelected)
             {
-               var player1=data[i].player1;
-              var player2=data[i].player2;
-              var player3=data[i].player3;
-              var player4=data[i].player4;
+               var player1=$("#player1").val();
+              var player2=$("#player2").val();
+              var player3=$("#player3").val();
+              var player4=$("#player4").val();;
               var bookingEmail = data[i].email;
               var bookingName = data[i].bookingName;
-              
-                 $.ajax({
-              type: 'POST',
-              data: {bookingDate: dateSelected, bookingTime: timeSelected},
-              url: "deleteBooking.php",
-              success: function(result){
-                  alert("Booking Deleted");
-                  
-                    
-                  }
-               });
-          
-              
+              alert(bookingName);        
+              alert(bookingEmail); 
+              alert(player1);
+              alert(player2);
+              alert(player3);
+              alert(player4);
+              alert(timeSelected);        
+              alert(dateSelected);
              
               $.ajax({
               type: 'POST',
               data: {bookingDate: dateSelected, bookingTime: timeSelected, bookingEmail: bookingEmail,
                bookingName: bookingName, player1: player1,  player2: player2,  player3: player3,  player4: player4},
-              url: "makeBooking.php",
+              url: "updateBooking.php",
               success: function(result){
                   alert("Booking Updated");
                   window.location.replace("membersInformation.php");
