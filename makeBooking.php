@@ -17,7 +17,7 @@ if($connection === false){
 }
  
 // Update Bookings Info
-$sql = "INSERT INTO bookings (bookingDate, bookingTime, bookingName, email, player1,  player2,  player3,  player4) VALUES ('$bookingDate', ' $bookingTime', ' $bookingName','$bookingEmail', '$player1' , '$player2',  '$player3' , '$player4') "; 
+$sql = "INSERT INTO bookings (bookingDate, bookingTime, bookingName, email, player1,  player2,  player3,  player4) VALUES ('$bookingDate', '$bookingTime', '$bookingName','$bookingEmail', '$player1' , '$player2',  '$player3' , '$player4') "; 
 
 if(mysqli_query($connection, $sql)){
     echo "Records were updated successfully.";

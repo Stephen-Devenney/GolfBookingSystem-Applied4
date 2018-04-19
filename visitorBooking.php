@@ -4,6 +4,7 @@
 <script src="jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+  <script type="text/javascript" src="underscore.js"></script>
 <script type="text/javascript" src="visitorBookings.js"></script>
 <script type="text/javascript" src="clock.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -29,20 +30,23 @@
   <!--Creates the popup content-->
    <div class="popup-content">
       <h2>Booking Details</h2>
+      <form action="bookingConfirmation.php" method="post">
       <table id="bookingForm">
         <tr><th>Booking Details</th></tr>
-          <tr><td>Date:</td><td><input type="text" id="dateSelected" class="form-control" placeholder="" readonly></td></tr>
-          <tr><td>Time:</td><td><input type="text" id="timeSelected" class="form-control" placeholder="" readonly></td></tr>
-          <tr><td>Booking Name:</td><td><input type="text" id="bookingName" class="form-control" placeholder="" required></td>
-          <tr><td>Email:</td><td><input type="text" id="email" class="form-control" placeholder="" required></td>
-          <tr><td><label for="player1">Player 1</label></td><td><input type="text" id="player1" class="form-control" placeholder="" ></td>
-          <tr><td><label for="player2">Player 2</label></td><td><input type="text" id="player2" class="form-control" placeholder="" ></td>
-          <tr><td><label for="player3">Player 3</label</td><td><input type="text" id="player3" class="form-control" placeholder="" ></td>
-          <tr><td><label for="player4">Player 4</label></td><td><input type="text" id="player4" class="form-control" placeholder="" ></td>
+          <tr><td>Date:</td><td><input type="text" name="date" id="dateSelected" class="form-control" placeholder="" readonly></td></tr>
+          <tr><td>Time:</td><td><input type="text" name="time" id="timeSelected" class="form-control" placeholder="" readonly></td></tr>
+          <tr><td>Booking Name:</td><td><input type="text" name="bookingName" id="bookingName" class="form-control" placeholder="" required></td>
+          <tr><td>Email:</td><td><input type="text" name="email" id="email" class="form-control" placeholder="" required></td>
+          <tr><td><label for="player1">Player 1</label></td><td><input type="text" name="player1" id="player1" class="form-control" placeholder="" ></td>
+          <tr><td><label for="player2">Player 2</label></td><td><input type="text" name="player2" id="player2" class="form-control" placeholder="" ></td>
+          <tr><td><label for="player3">Player 3</label</td><td><input type="text" name="player3" id="player3" class="form-control" placeholder="" ></td>
+          <tr><td><label for="player4">Player 4</label></td><td><input type="text" name="player4" id="player4" class="form-control" placeholder="" ></td>
     </table>
      <!--popup's close button-->
-      <button id="confirmBooking">Confirm Booking</button>
+     <input id="confirmBooking" type="submit">Confirm Booking</button>
+      <!--<button id="confirmBooking" >Confirm Booking</button> -->
       <button class="close">Close</button>    
+    </form>
     </div>
     </div>
     <div id="results">
@@ -52,4 +56,3 @@
 </div>
 </div>
 </body>
-</html>

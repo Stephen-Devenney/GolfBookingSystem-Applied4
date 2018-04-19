@@ -7,13 +7,14 @@ var xmlhttp;
 var year;
 var selectedDate;
 var date;
+var number =-2;
 window.onload=function() {
 	var fullDate = new Date()
-	console.log(fullDate); 
+	//console.log(fullDate); 
 	//convert month to 2 digits
 	var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
 	date = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
-	console.log(date);
+	//console.log(date);
 	selectedDate = date;
     getAjaxData();
     startTime();
@@ -81,126 +82,59 @@ function showAjaxData(){
 
 	  	else
 	 	{*/
-		  output += "<table class=bookingTimes border = 1><tr><td>Time</td><td>Booking Name</td><td>Player 1</td><td>Player 2</td><td>Player 3</td><td>Player 4</td><td></td></tr>"
+		  output += "<table id=bookingsTable class=bookingTimes border = 1><tr><td>Time</td><td>Booking Name</td><td>Player 1</td><td>Player 2</td><td>Player 3</td><td>Player 4</td><td></td></tr>"
 
 		  	for(i = 0; i < data.bookingTimes.length; i++)
 		  	{	
-		  		output += '<tr><td>' + data.bookingTimes[i].bookingTimes + '</td>';
-		  		if(data.bookings.length > 0)
-		  		{
-			  		for(a = 0; a < data.bookings.length; a++)
-		  	  		{
-		  	    		 if(data.bookingTimes[i].bookingTimes == data.bookings[a].bookingTime)
-					  	     {
-					  		   if(data.bookings[a].player2 == 0 && data.bookings[a].player3 == 0 && data.bookings[a].player4 == 0)
-					  		   	{
-					  		   		output += '<td>' + data.bookings[a].bookingName + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player1 + '</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player2 value=1> €30.00</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player3 value=2> €60.00</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player4 value=3> €90.00</td>';
-					  		   		output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
-					  		   		output += '</tr>'
-					  		   }
-					  		   else if(data.bookings[a].player3 ==0 && data.bookings[a].player4 == 0)
-					  		   {
-					  		   		output += '<td>' + data.bookings[a].bookingName + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player1 + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player2 + '</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player3 value=1> €30.00</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player4 value=2> €60.00</td>';
-					  		   		output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
-					  		   		output += '</tr>'
-					  		   }
-					  		   else if(data.bookings[a].player4 == 0)
-					  		   {	output += '<td>' + data.bookings[a].bookingName + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player1 + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player2 + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player3 + '</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player4 value=1> €30.00</td>';
-					  		   		output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
-					  		   		output += '</tr>'
-					  		   }
-					  		   else if (data.bookings[a].player1 == 0 && data.bookings[a].player2 == 0 && data.bookings[a].player3 == 0 && data.bookings[a].player4 != 0)
-					  		   {	
-					  		   		output += '<td>' + data.bookings[a].bookingName + '</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player1 value=1> €30.00</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player2 value=2> €60.00</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player3 value=3> €90.00</td>';
-					  		   		output += '<td>' + data.bookings[a].player4 + '</td>';
-					  		   		output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
-					  		   		output += '</tr>'
-					  		   }
-					  		   /*else if (data.bookings[a].player1 == 0 && data.bookings[a].player2 == 0 && data.bookings[a].player3 != 0 && data.bookings[a].player4 != 0)
-					  		   {	
-					  		   		output += '<td>' + data.bookings[a].bookingName + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player3 + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player4 + '</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player3 value=1> €30.00</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player4 value=2> €60.00</td>';;
-					  		   		output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
-					  		   		output += '</tr>'
-					  		   }
-					  		    else if (data.bookings[a].player1 == 0 && data.bookings[a].player2 != 0 && data.bookings[a].player3 != 0 && data.bookings[a].player4 != 0)
-					  		   {	
-					  		   		output += '<td>' + data.bookings[a].bookingName + '</td>';
-					  		   		output += '<td><input class=cat type=radio id=players name=player1 value=1> €30.00</td>';
-					  		   		output += '<td>' + data.bookings[a].player2 + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player3 + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player4 + '</td>';
-					  		   		output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
-					  		   		output += '</tr>'
-					  		   }*/
-
-					  		   else if (data.bookings[a].player1 != null && data.bookings[a].player2 != null && data.bookings[a].player3 != null && data.bookings[a].player4 != null)
-					  		   {	
-					  		   		output += '<td>' + data.bookings[a].bookingName + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player1 + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player2 + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player3 + '</td>';
-					  		   		output += '<td>' + data.bookings[a].player4 + '</td>';
-					  		   		output += '<td></td>';
-					  		   		output += '</tr>'
-					  		   }					  		   
-					  	     }
-					  	else
-					  	{
-					  	     output += '<td></td>';
-					  		 output += '<td><input class=cat type=radio id=players name=player value=1 > €30.00</td>';
-					  		 output += '<td><input class=cat type=radio id=players name=player value=2 > €60.00</td>';
-					  		 output += '<td><input class=cat type=radio id=players name=player value=3 > €90.00</td>';
-					  		 output += '<td><input class=cat type=radio id=players name=player value=4 > €120.00</td>';
-					  		 output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
-					  	     output += '</tr>'
-					  	 }
-
-
-		      	}
-
-		  	}
-		     else
-		     {
-		      output += '<td></td>';
+		  	  output += '<tr><td>' + data.bookingTimes[i].bookingTimes + '</td>';
+		      output+= '<td></td>';
 		  	  output += '<td><input class=cat type=radio id=players name=player value=1 > €30.00</td>';
 		  	  output += '<td><input class=cat type=radio id=players name=player value=2 > €60.00</td>';
 		  	  output += '<td><input class=cat type=radio id=players name=player value=3 > €90.00</td>';
 		  	  output += '<td><input class=cat type=radio id=players name=player value=4 > €120.00</td>';
 		  	  output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
 		  	  output += '</tr>'
-		      }  
-
-
-  			}
+		  	}
+		      
   		output += "</table>";
-		}
+
 		document.getElementById('results').innerHTML = output;
+
+
+
+		 		
+		  for(i = 0; i < data.bookingTimes.length; i++)
+		  	{	
+		  		for(var a = 0; a < data.bookings.length; a++)
+		  	  		{
+		  				if(data.bookingTimes[i].bookingTimes == data.bookings[a].bookingTime)
+					  	    {
+
+					  	    	{
+					  	    	//alert(document.getElementById("bookingsTable").rows[(i+1)].cells[0].innerHTML);
+					  	    	var x = document.getElementById("bookingsTable").rows[(i+1)].cells;
+					  	    	x[1].innerHTML = data.bookings[a].bookingName;
+					  	    	x[2].innerHTML = data.bookings[a].player1;
+					  	    	x[3].innerHTML = data.bookings[a].player2;
+					  	    	x[4].innerHTML = data.bookings[a].player3;
+					  	    	x[5].innerHTML = data.bookings[a].player4;
+					  	    	x[6].innerHTML = "";
+					  	    	
+
+					  	    }
+					}
+
+		  		
+		      } 
+		   } 
+	}
 	
 }
 
 $(document).on("click", ".bookNow", function(){
   	    timeSelected = this.id;
   	    var selValue = $('input:checked').val(); 
-	    alert(selValue);
+	    //alert(selValue);
 	    //alert(timeSelected);
 	    $(".popup-overlay, .popup-content").addClass("active");
 	    if(selValue == 1)
@@ -276,4 +210,6 @@ $(document).on("click", "#confirmBooking", function(){
 	            }
 	          });
 });
+
+
 
