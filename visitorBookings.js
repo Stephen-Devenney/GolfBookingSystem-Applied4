@@ -8,15 +8,36 @@ var year;
 var selectedDate;
 var date;
 var number =-2;
+var currentTime;
+var today;
 window.onload=function() {
 	var fullDate = new Date()
 	//console.log(fullDate); 
 	//convert month to 2 digits
 	var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
 	date = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+	today = date;
 	//console.log(date);
 	selectedDate = date;
     getAjaxData();
+    var now = new Date(Date.now());
+    if (now.getHours() < 10 && now.getMinutes() < 10)
+    {
+		currentTime = "0"+now.getHours() + ":0" + now.getMinutes();
+    }
+  	else if(now.getHours() < 10)
+  	{
+  		currentTime = "0"+now.getHours() + ":" + now.getMinutes();
+  	}
+  	else if(now.getMinutes() < 10)
+  	{
+  	currentTime = now.getHours() + ":0" + now.getMinutes();
+  	}
+	else
+	{
+	currentTime = now.getHours() + ":" + now.getMinutes();
+	}
+	console.log(currentTime);
     startTime();
 
 
@@ -88,12 +109,26 @@ function showAjaxData(){
 		  	{	
 		  	  output += '<tr><td>' + data.bookingTimes[i].bookingTimes + '</td>';
 		      output+= '<td></td>';
-		  	  output += '<td><input class=cat type=radio id=players name=player value=1 > €30.00</td>';
-		  	  output += '<td><input class=cat type=radio id=players name=player value=2 > €60.00</td>';
-		  	  output += '<td><input class=cat type=radio id=players name=player value=3 > €90.00</td>';
-		  	  output += '<td><input class=cat type=radio id=players name=player value=4 > €120.00</td>';
+		  	  
+		  	  if(selectedDate == today && data.bookingTimes[i].bookingTimes <= currentTime)
+		  	  {
+		  	  output += '<td></td>';
+		  	  output += '<td></td>';
+		  	  output += '<td></td>';
+		  	  output += '<td></td>';
+		  	  output += '<td>Time has passed</td>';
+		  	  output += '</tr>'
+
+		  	  }
+		  	  else
+		  	  {
+		  	  output += '<td><input id=players name=players class=cat type=radio value=1 > €30.00</td>';
+		  	  output += '<td><input id=players name=players class=cat type=radio value=2 > €60.00</td>';
+		  	  output += '<td><input id=players name=players class=cat type=radio value=3 > €90.00</td>';
+		  	  output += '<td><input id=players name=players class=cat type=radio value=4 > €120.00</td>'
 		  	  output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
 		  	  output += '</tr>'
+		  	}
 		  	}
 		      
   		output += "</table>";
@@ -110,7 +145,60 @@ function showAjaxData(){
 		  				if(data.bookingTimes[i].bookingTimes == data.bookings[a].bookingTime)
 					  	    {
 
-					  	    	{
+					  	    	if(data.bookings[a].player2 == 0 && data.bookings[a].player3 == 0 && data.bookings[a].player4 == 0)
+					  		   	{
+					  		    //alert(document.getElementById("bookingsTable").rows[(i+1)].cells[2].innerHTML);
+					  		    //alert(document.getElementById("bookingsTable").rows[(i+1)].cells[3].innerHTML);
+					  		    //alert(document.getElementById("bookingsTable").rows[(i+1)].cells[4].innerHTML);
+					  		   	var x = document.getElementById("bookingsTable").rows[(i+1)].cells;
+					  	    	x[1].innerHTML = data.bookings[a].bookingName;
+					  	    	x[2].innerHTML = data.bookings[a].player1;
+					  	    	x[3].innerHTML = "";
+					  	    	x[4].innerHTML = "";
+					  	    	x[5].innerHTML = "";
+
+		  	  					if(selectedDate == today && data.bookingTimes[i].bookingTimes <= currentTime)
+							  	  {
+							  	  		output += '<td>Time has passed</td>';
+							  	  }
+							  	  else
+
+		  	  					x[6].innerHTML = "Tee Reserved";
+					  		}
+					  		   	else if(data.bookings[a].player3 == 0 && data.bookings[a].player4 == 0)
+					  		   	{
+					  		   	var x = document.getElementById("bookingsTable").rows[(i+1)].cells;
+					  	    	x[1].innerHTML = data.bookings[a].bookingName;
+					  	    	x[2].innerHTML = data.bookings[a].player1;
+					  	    	x[3].innerHTML = data.bookings[a].player2;
+					  	    	x[4].innerHTML = "";
+					  	    	x[5].innerHTML = "";
+		  	  					if(selectedDate == today && data.bookingTimes[i].bookingTimes <= currentTime)
+							  	  {
+							  	  		output += '<td>Time has passed</td>';
+							  	  }
+							  	  else
+		  	  					x[6].innerHTML = "Tee Reserved";
+					  		   	}
+					  		   	else if(data.bookings[a].player4 == 0)
+					  		   	{
+
+					  		   		var x = document.getElementById("bookingsTable").rows[(i+1)].cells;
+					  	    		x[1].innerHTML = data.bookings[a].bookingName;
+					  	    		x[2].innerHTML = data.bookings[a].player1;
+					  	    		x[3].innerHTML = data.bookings[a].player2;
+					  	    		x[4].innerHTML = data.bookings[a].player3;
+					  	    		x[5].innerHTML = "";
+					  		   
+		  	  						if(selectedDate == today && data.bookingTimes[i].bookingTimes <= currentTime)
+							  	  	{
+							  	  		output += '<td>Time has passed</td>';
+							  	  	}
+							  	  	else
+		  	  						x[6].innerHTML = "Tee Reserved";
+					  		   	}
+					  		   	else
+					  		   	{
 					  	    	//alert(document.getElementById("bookingsTable").rows[(i+1)].cells[0].innerHTML);
 					  	    	var x = document.getElementById("bookingsTable").rows[(i+1)].cells;
 					  	    	x[1].innerHTML = data.bookings[a].bookingName;
@@ -118,7 +206,13 @@ function showAjaxData(){
 					  	    	x[3].innerHTML = data.bookings[a].player2;
 					  	    	x[4].innerHTML = data.bookings[a].player3;
 					  	    	x[5].innerHTML = data.bookings[a].player4;
-					  	    	x[6].innerHTML = "";
+					  	    	if(selectedDate == today && data.bookingTimes[i].bookingTimes <= currentTime)
+							  	  {
+							  	  		output += '<td>Time has passed</td>';
+							  	  }
+							  	  else
+					  	    	x[6].innerHTML = "Tee Reserved";
+					  	    	}
 					  	    	
 
 					  	    }
@@ -127,12 +221,14 @@ function showAjaxData(){
 		  		
 		      } 
 		   } 
-	}
+	
 	
 }
 
 $(document).on("click", ".bookNow", function(){
   	    timeSelected = this.id;
+  	     if(jQuery('input[id=players]').is(':checked')){
+ 
   	    var selValue = $('input:checked').val(); 
 	    //alert(selValue);
 	    //alert(timeSelected);
@@ -166,11 +262,16 @@ $(document).on("click", ".bookNow", function(){
     	}
 	    $("#dateSelected").val(selectedDate);
 	    $("#timeSelected").val(timeSelected);
+	}
+	else
+	{
+		alert("Please select how your preferred amount of players!")
+	}
 	    
 });
 
 //removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
-$(document).on("click", ".close", function(){
+$(document).on("click", "#close", function(){
   $(".popup-overlay, .popup-content").removeClass("active");
   timeSelected = "";
 });
@@ -210,6 +311,4 @@ $(document).on("click", "#confirmBooking", function(){
 	            }
 	          });
 });
-
-
 

@@ -363,3 +363,26 @@ a:hover {
   /*Shows pop-up content when "active" class is present */
   visibility:visible;
 }
+
+
+input[type=submit], input[type=reset] {
+  background-color: #90ee90;
+    border-radius: 5px; 
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+
+#confirmBooking1{
+      background-color: #90ee90;
+    border-radius: 5px; 
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}

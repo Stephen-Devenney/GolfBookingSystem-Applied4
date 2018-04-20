@@ -1,0 +1,1 @@
+C:\Users\Stephen\Documents\C# Projects\GolfAdmin\GolfAdmin\GolfAdmin.csproj;x86

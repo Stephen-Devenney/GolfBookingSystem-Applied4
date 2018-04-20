@@ -56,20 +56,17 @@ if ($count == 1)
 
 
 <button class= "infoBtns" style="float: right;"><a href="logout.php"> Logout </a></button>
-
-<button class= "infoBtns" style="float: right;"><a href ="memberAccount.html">My Account</a></button>
-<button class= "infoBtns" style="float: right;"><a href ="membersLogin.php">Return</a></button>
 <h4>Your Active Bookings</h4>
 
 <?php
 //session_start();
 require('connect.php');
 $name = $_SESSION['name'];
-$query = "SELECT * FROM `bookings` WHERE (player1 = '$name') OR (player2 = '$name') OR (player3 = '$name') OR (player4 ='$name') ";
+$query = "SELECT * FROM `bookings` WHERE (player1 = '$name') OR (player2 = '$name') OR (player3 = '$name') OR (player4 ='$name') ORDER BY 'bookingDate' ASC";
 $result = mysqli_query($connection,$query) or die(mysqli_error($connection));
 $count = mysqli_num_rows($result);
 
-echo "<table border = '1'>"; 
+echo "<table class='bookingTimes' border = '1'>"; 
 
 if ($count > 0)
   {

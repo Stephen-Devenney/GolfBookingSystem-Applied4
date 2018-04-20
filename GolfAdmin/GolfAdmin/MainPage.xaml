@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="GolfAdmin.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GolfAdmin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!-- <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"> -->
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Name="btnHome" Background="LightGreen" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch" Click="btnHome_Click">
+            <Image Source="Images/Home.png"></Image>
+        </Button>
+        <Button Name="btnList" Background="LightGreen" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" Click="btnList_Click">
+            <Image Source="Images/List.png"></Image>
+        </Button>
+        <Button Name="btnAdd" Background="LightGreen" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="2" Grid.Column="0" VerticalAlignment="Stretch" Click="btnAdd_Click">
+            <Image Source="Images/Add.png"></Image>
+        </Button>
+        <Button Name="btnEdit" Background="LightGreen" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="3" Grid.Column="0" VerticalAlignment="Stretch" Click="btnEdit_Click">
+            <Image Source="Images/Edit.png"></Image>
+        </Button>
+        <Button Name="btnListAlt" Background="LightGreen" Content="List" FontSize="26" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="600,174,-789,-221" Grid.RowSpan="4" VerticalAlignment="Top" Width="225" Click="btnList_Click"/>
+        <Button Name="btnAddAlt" Background="LightGreen" Content="Add" FontSize="26" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="600,308,-825,-355" Grid.RowSpan="4" VerticalAlignment="Top" Width="225" Click="btnAdd_Click"/>
+        <Button Name="btnExitAlt" Background="LightGreen" Content="Edit" FontSize="26" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="600,442,-825,-489" Grid.RowSpan="4" VerticalAlignment="Top" Width="225" Click="btnEdit_Click"/>
+        <Button Content="Exit" Background="LightGreen" FontSize="26" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="600,560,-825,-607" Grid.RowSpan="4" VerticalAlignment="Top" Width="225" Click="Button_Click"/>
+    </Grid>
+
+</Page>

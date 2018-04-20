@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="GolfAdmin.EditPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GolfAdmin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button x:ConnectionId='1' Name="btnHome" Background="LightGreen" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch"                      >
+            <Image Source="Images/Home.png"></Image>
+        </Button>
+        <Button x:ConnectionId='2' Name="btnList" Background="LightGreen" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch"                      >
+            <Image Source="Images/List.png"></Image>
+        </Button>
+        <Button x:ConnectionId='3' Name="btnAdd" Background="LightGreen" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="2" Grid.Column="0" VerticalAlignment="Stretch"                     >
+            <Image Source="Images/Add.png"></Image>
+        </Button>
+        <Button x:ConnectionId='4' Name="btnEdit" Background="LightGreen" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="3" Grid.Column="0" VerticalAlignment="Stretch"                      >
+            <Image Source="Images/Edit.png"></Image>
+        </Button>
+        <TextBlock Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="570,30,-835,-70" Grid.RowSpan="4" Text="Edit Member Details" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="402,99,-464,-119" Grid.RowSpan="4" Text="Member ID :" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='5' Name="txtMemberID" Grid.ColumnSpan="2" HorizontalAlignment="Left" FontSize="28" Margin="714,93,-864,-142" Grid.RowSpan="4" Text="" Width="150" VerticalAlignment="Top"                                      />
+        <ListBox x:ConnectionId='6' Name="lbMembers" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollMode="Enabled" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="337" Margin="273,201,-717,-538" Grid.RowSpan="4" VerticalAlignment="Top" Width="444"                                              />
+        <TextBlock Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="800,200,-798,-283" Grid.RowSpan="4" Text="First Name:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="800,300,-811,-367" Grid.RowSpan="4" Text="Last Name:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="800,400,-753,-445" Grid.RowSpan="4" Text="Email:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="800,500,-799,-565" Grid.RowSpan="4" Text="MobileNo:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='7' Name="txtFirstName" Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="1000,200,-1015,-239" Grid.RowSpan="4" Text="" Width="200" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="800,600,-779,-638" Grid.RowSpan="4" Text="Address:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='8' Name="txtLastName" Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="1000,300,-1015,-344" Grid.RowSpan="4" Text="" Width="200" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='9' Name="txtEmail" Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="1000,400,-1024,-440" Width="200" Grid.RowSpan="4" Text="" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='10' Name="txtMobileNo" Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="1000,500,-1063,-554" Grid.RowSpan="4" Text="" Width="200" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='11' Name="txtAddress" Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Left" Margin="1000,600,-1039,-638" Grid.RowSpan="4" Text="" Width="200" VerticalAlignment="Top"/>
+        <Button x:ConnectionId='12' Name="btnUpdate" Content="Update" FontSize="28" Grid.ColumnSpan="2" Width="200" Background="LightGreen" HorizontalAlignment="Left" Margin="350,600,-401,-632" Grid.RowSpan="4" VerticalAlignment="Top"                        />
+    </Grid>
+</Page>
+

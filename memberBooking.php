@@ -48,7 +48,7 @@ require('connect.php');
     <!--Creates the popup body-->
 <div class="popup-overlay">
   <!--Creates the popup content-->
-   <div class="popup-content">
+   <div class="popup-content" align="center">
       <h2>Booking Details</h2>
       <table id="bookingForm">
         <tr><th>Booking Details</th></tr>
@@ -62,8 +62,9 @@ require('connect.php');
           <tr><td><label for="player4">Player 4</label></td><td><input type="text" id="player4" class="form-control" placeholder="" ></td>
     </table>
      <!--popup's close button-->
-      <button id="confirmBooking">Confirm Booking</button>
-      <button class="close">Close</button>    
+      <button id="confirmBooking1">Confirm Booking</button>
+      <br>
+      <button class="close" class= "infoBtns"><a href ="#">Close</a></button>     
     </div>
     </div>
     <div id="results">

@@ -7,15 +7,34 @@ var xmlhttp;
 var year;
 var selectedDate;
 var date;
+var today;
 window.onload=function() {
 	var fullDate = new Date()
 	console.log(fullDate); 
 	//convert month to 2 digits
 	var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
 	date = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
-	console.log(date);
+	//console.log(date);
+	today = date;
 	selectedDate = date;
     getAjaxData();
+    var now = new Date(Date.now());
+    if (now.getHours() < 10 && now.getMinutes() < 10)
+    {
+		currentTime = "0"+now.getHours() + ":0" + now.getMinutes();
+    }
+  	else if(now.getHours() < 10)
+  	{
+  		currentTime = "0"+now.getHours() + ":" + now.getMinutes();
+  	}
+  	else if(now.getMinutes() < 10)
+  	{
+  	currentTime = now.getHours() + ":0" + now.getMinutes();
+  	}
+	else
+	{
+	currentTime = now.getHours() + ":" + now.getMinutes();
+	}
     startTime();
 
 
@@ -91,7 +110,15 @@ function showAjaxData(){
 		  	  output += '<td></td>';
 		  	  output += '<td></td>';
 		  	  output += '<td></td>';
-		  	  output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
+		  	  if(selectedDate == today && data.bookingTimes[i].bookingTimes <= currentTime)
+			 {
+				output += '<td>Time has passed</td>';
+							  	  }
+							  	  else
+							  	  {
+
+		  	  					output += '<td><button name="time" type="submit" class="bookNow" id="' + data.bookingTimes[i].bookingTimes+'">Book Now</button></td>';
+					  	    	}
 		  	  output += '</tr>'
 		  	}
 		      
@@ -117,7 +144,15 @@ function showAjaxData(){
 					  	    	x[3].innerHTML = data.bookings[a].player2;
 					  	    	x[4].innerHTML = data.bookings[a].player3;
 					  	    	x[5].innerHTML = data.bookings[a].player4;
-					  	    	x[6].innerHTML = "";
+					  	    	if(selectedDate == today && data.bookingTimes[i].bookingTimes <= currentTime)
+							  	  {
+							  	  		output += '<td>Time has passed</td>';
+							  	  }
+							  	  else
+							  	  {
+
+		  	  					x[6].innerHTML = "Tee Reserved";
+					  	    	}
 					  	    	
 
 					  	    }
@@ -135,8 +170,8 @@ $(document).on("click", ".bookNow", function(){
   	    var selValue = $('input:checked').val(); 
   	    var sessionName = $('#session_name').val();
   	    var sessionEmail = $('#session_email').val();
-  	    alert(sessionName);
-	    alert(selValue);
+  	    //alert(sessionName);
+	    //alert(selValue);
 	    //alert(timeSelected);
 	    $(".popup-overlay, .popup-content").addClass("active");
 	    if(selValue == 1)
@@ -182,28 +217,28 @@ $(document).on("click", ".close", function(){
 });
 
 
-$(document).on("click", "#confirmBooking", function(){
+$(document).on("click", "#confirmBooking1", function(){
   //alert("Booking Confirmed");
   //alert(selectedDate);
   //alert(timeSelected);
   var bookingName;
   bookingName = $("#bookingName").val();
-  alert(bookingName);
+  //alert(bookingName);
   var bookingEmail;
   bookingEmail = $("#email").val();
-  alert(bookingEmail);
+  //alert(bookingEmail);
   var player1;
   player1 = $("#player1").val();
-  alert(player1);
+  //alert(player1);
   var player2;
   player2 = $("#player2").val();
-  alert(player2);
+  //alert(player2);
   var player3;
   player3 = $("#player3").val();
-  alert(player3);
+  //alert(player3);
   var player4;
   player4 = $("#player4").val();
-  alert(player4);
+  //alert(player4);
 
 
   	          $.ajax({

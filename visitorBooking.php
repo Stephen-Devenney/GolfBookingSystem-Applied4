@@ -28,11 +28,10 @@
     <!--Creates the popup body-->
 <div class="popup-overlay">
   <!--Creates the popup content-->
-   <div class="popup-content">
+   <div class="popup-content" align="center">
       <h2>Booking Details</h2>
       <form action="bookingConfirmation.php" method="post">
       <table id="bookingForm">
-        <tr><th>Booking Details</th></tr>
           <tr><td>Date:</td><td><input type="text" name="date" id="dateSelected" class="form-control" placeholder="" readonly></td></tr>
           <tr><td>Time:</td><td><input type="text" name="time" id="timeSelected" class="form-control" placeholder="" readonly></td></tr>
           <tr><td>Booking Name:</td><td><input type="text" name="bookingName" id="bookingName" class="form-control" placeholder="" required></td>
@@ -43,9 +42,10 @@
           <tr><td><label for="player4">Player 4</label></td><td><input type="text" name="player4" id="player4" class="form-control" placeholder="" ></td>
     </table>
      <!--popup's close button-->
-     <input id="confirmBooking" type="submit">Confirm Booking</button>
+     <input id="confirmBooking" type="submit" value="Confirm Booking">
       <!--<button id="confirmBooking" >Confirm Booking</button> -->
-      <button class="close">Close</button>    
+      <br>
+     <button id="close" class= "infoBtns"><a href ="#">Return</a></button>   
     </form>
     </div>
     </div>

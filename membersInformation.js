@@ -49,42 +49,49 @@ window.onload=function() {
 });
 
   $(document).on("click", ".editBooking", function(){
-  
-      $.getJSON("getBookingsData.php", function(data){
-          for(var i = 0; i<data.length;i++)
-          {
-            if(data[i].bookingDate == dateSelected && data[i].bookingTime == timeSelected)
-            {
-               var player1=$("#player1").val();
-              var player2=$("#player2").val();
-              var player3=$("#player3").val();
-              var player4=$("#player4").val();;
-              var bookingEmail = data[i].email;
-              var bookingName = data[i].bookingName;
-              alert(bookingName);        
-              alert(bookingEmail); 
-              alert(player1);
-              alert(player2);
-              alert(player3);
-              alert(player4);
-              alert(timeSelected);        
-              alert(dateSelected);
-             
-              $.ajax({
-              type: 'POST',
-              data: {bookingDate: dateSelected, bookingTime: timeSelected, bookingEmail: bookingEmail,
-               bookingName: bookingName, player1: player1,  player2: player2,  player3: player3,  player4: player4},
-              url: "updateBooking.php",
-              success: function(result){
-                  alert("Booking Updated");
-                  window.location.replace("membersInformation.php");
-                    
-              }
-            });
-            }
-          }
-        });
-        
 
+    var player1=$("#player1").val();
+    var player2=$("#player2").val();
+    var player3=$("#player3").val();
+    var player4=$("#player4").val();;
+  
+      if(player1 == "" && player2 == "" && player3 == "" && player4 == "" )
+      {
+             alert("Fields cannot be empty to edit booking")
+        
+    }
+    else
+                                        {
+                                          
+                                            $.getJSON("getBookingsData.php", function(data){
+                      for(var i = 0; i<data.length;i++)
+                      {
+                                      if(data[i].bookingDate == dateSelected && data[i].bookingTime == timeSelected)
+                                      {
+                                        var bookingEmail = data[i].email;
+                                        var bookingName = data[i].bookingName;
+                                       
+                                                 
+                                                  $.ajax({
+                                                  type: 'POST',
+                                                  data: {bookingDate: dateSelected, bookingTime: timeSelected, bookingEmail: bookingEmail,
+                                                   bookingName: bookingName, player1: player1,  player2: player2,  player3: player3,  player4: player4},
+                                                  url: "updateBooking.php",
+                                                  success: function(result){
+                                                      alert("Booking Updated");
+                                                      window.location.replace("membersInformation.php");
+                                                        
+                                                  }
+                                                  });
+                                        }
+
+                                      
+                      }
+                   
+            
+               
+          });
+                                     
+                                        }
 });
 }
